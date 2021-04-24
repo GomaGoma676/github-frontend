@@ -5,17 +5,16 @@
 ### 1-2.  create-next-app
     npx create-next-app .
 #### Node.js version 10.13以降が必要です。 -> ターミナル `node -v`でver確認出来ます。
-
-### 1-4.  React-Testing-Library + MSW + next-page-tester のインストール
+### 1-3.  React-Testing-Libraryのインストール
     yarn add -D jest @testing-library/react @testing-library/jest-dom @testing-library/dom babel-jest @babel/core @testing-library/user-event jest-css-modules
-### 1-5.  Project folder 直下に".babelrc"ファイルを作成して下記設定を追加
+### 1-4.  Project folder 直下に".babelrc"ファイルを作成して下記設定を追加
     touch .babelrc
 ~~~
     {
         "presets": ["next/babel"]
     }
 ~~~
-### 1-6.  package.json に jest の設定を追記
+### 1-5.  package.json に jest の設定を追記
 ~~~
     "jest": {
         "testPathIgnorePatterns": [
@@ -27,14 +26,14 @@
         }
     }
 ~~~
-### 1-7.  package.jsonに test scriptを追記
+### 1-6.  package.jsonに test scriptを追記
 ~~~
     "scripts": {
         ...
         "test": "jest --env=jsdom --verbose"
     },
 ~~~
-### 1-8.  prettierの設定 : settingsでRequire Config + Format On Saveにチェック
+### 1-7.  prettierの設定 : settingsでRequire Config + Format On Saveにチェック
     touch .prettierrc
 ~~~
     {
