@@ -44,6 +44,9 @@
 ## 2. Test動作確認
 ### 2-1. `__tests__`フォルダと`Home.test.tsx`ファイルの作成
 ~~~
+/**
+ * @jest-environment jsdom
+ */
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import Home from '../pages/index'
