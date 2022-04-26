@@ -6,31 +6,26 @@
     npx create-next-app .
 #### Node.js version 10.13以降が必要です。 -> ターミナル `node -v`でver確認出来ます。
 ### 1-3.  React-Testing-Libraryのインストール
-    yarn add -D jest @testing-library/react @testing-library/jest-dom @testing-library/dom babel-jest @babel/core @testing-library/user-event jest-css-modules
-### 1-4.  Project folder 直下に".babelrc"ファイルを作成して下記設定を追加
-    touch .babelrc
+    yarn add -D jest@27.5.1 @testing-library/react @testing-library/jest-dom jest-css-modules
+### 1-4.  Project folder 直下に"jest.config.js"ファイルを作成して下記設定を追加
+    touch jest.config.js
 ~~~
-    {
-        "presets": ["next/babel"]
-    }
+const nextJest = require('next/jest')
+const createJestConfig = nextJest({
+  dir: './',
+})
+const customJestConfig = {
+  moduleDirectories: ['node_modules', '<rootDir>/'],
+  testEnvironment: 'jest-environment-jsdom',
+}
+module.exports = createJestConfig(customJestConfig)
 ~~~
-### 1-5.  package.json に jest の設定を追記
-~~~
-    "jest": {
-        "testPathIgnorePatterns": [
-            "<rootDir>/.next/",
-            "<rootDir>/node_modules/"
-        ],
-        "moduleNameMapper": {
-            "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
-        }
-    }
-~~~
+### -1-5.  package.json に jest の設定を追記
 ### 1-6.  package.jsonに test scriptを追記
 ~~~
     "scripts": {
         ...
-        "test": "jest --env=jsdom --verbose"
+        "test": "jest --watch"
     },
 ~~~
 ### 1-7.  prettierの設定 : settingsでRequire Config + Format On Saveにチェック
@@ -44,9 +39,6 @@
 ## 2. Test動作確認
 ### 2-1. `__tests__`フォルダと`Home.test.tsx`ファイルの作成
 ~~~
-/**
- * @jest-environment jsdom
- */
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import Home from '../pages/index'
