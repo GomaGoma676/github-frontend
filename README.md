@@ -20,7 +20,7 @@ const customJestConfig = {
 }
 module.exports = createJestConfig(customJestConfig)
 ~~~
-### -1-5.  package.json に jest の設定を追記
+### ~~1-5.  package.json に jest の設定を追記~~
 ### 1-6.  package.jsonに test scriptを追記
 ~~~
     "scripts": {
