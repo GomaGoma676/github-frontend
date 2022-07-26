@@ -6,7 +6,7 @@
     npx create-next-app .
 #### Node.js version 10.13以降が必要です。 -> ターミナル `node -v`でver確認出来ます。
 ### 1-3.  React-Testing-Libraryのインストール
-    yarn add -D jest@27.5.1 @testing-library/react @testing-library/jest-dom jest-css-modules
+    yarn add -D jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom jest-css-modules
 ### 1-4.  Project folder 直下に"jest.config.js"ファイルを作成して下記設定を追加
     touch jest.config.js
 ~~~
@@ -39,8 +39,9 @@ module.exports = createJestConfig(customJestConfig)
 ## 2. Test動作確認
 ### 2-1. `__tests__`フォルダと`Home.test.tsx`ファイルの作成
 ~~~
+import React from 'react'
 import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import Home from '../pages/index'
 
 it('Should render title text', () => {
