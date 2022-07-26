@@ -37,7 +37,7 @@ module.exports = createJestConfig(customJestConfig)
     }
 ~~~  
 ## 2. Test動作確認
-### 2-1. `__tests__`フォルダと`Home.test.tsx`ファイルの作成
+### 2-1. `__tests__`フォルダと`Home.test.jsx`ファイルの作成
 ~~~
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
