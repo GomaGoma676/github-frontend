@@ -39,7 +39,6 @@ module.exports = createJestConfig(customJestConfig)
 ## 2. Test動作確認
 ### 2-1. `__tests__`フォルダと`Home.test.tsx`ファイルの作成
 ~~~
-import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Home from '../pages/index'
@@ -51,7 +50,7 @@ it('Should render title text', () => {
 ~~~
 ### 2-2. yarn test -> テストがPASSするか確認
 ~~~
- PASS  __tests__/Home.test.tsx
+ PASS  __tests__/Home.test.js
   ✓ Should render hello text (20 ms)
 
 Test Suites: 1 passed, 1 total
