@@ -3,8 +3,10 @@
     npm install --global yarn
     yarn --version
 ### 1-2.  create-next-app
-    npx create-next-app .
+    npx create-next-app@12.3.2 .
 #### Node.js version 10.13以降が必要です。 -> ターミナル `node -v`でver確認出来ます。
+### 1-2-1.  next.jsのversionを変更
+    yarn add next@12.3.2
 ### 1-3.  React-Testing-Libraryのインストール
     yarn add -D jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom jest-css-modules
 ### 1-4.  Project folder 直下に"jest.config.js"ファイルを作成して下記設定を追加
